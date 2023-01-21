@@ -156,7 +156,7 @@ namespace HomeWork1
             Console.WriteLine("Введите количество сантиметров: ");
             float sancentimeter = Convert.ToInt32(Console.ReadLine());
 
-            float result = sancentimeter / 100;
+            int result = (int)sancentimeter / 100;
             Console.WriteLine($"Ответ: {result} метров");
         }
 

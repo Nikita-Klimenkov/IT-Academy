@@ -27,7 +27,6 @@ namespace HomeWork1
             Console.ReadLine();
             Console.Clear();
 
-
             FindCountOfMeters();
         }
 
@@ -110,7 +109,6 @@ namespace HomeWork1
             int _int = _short;
             long _long = _int;
             decimal _decimal = _long;
-            
         }
 
         private static void ExplicitConversion()
@@ -205,6 +203,23 @@ namespace HomeWork1
             Console.WriteLine("Нажмите любую клавишу для продолжения");
             Console.ReadLine();
             Console.Clear();
+        }
+
+        private static void Num()
+        {
+            int column = 10;
+            int strings = 10;
+            int currentNum = 1;
+
+            for (int i = 1; i <= column; i++)
+            {
+                for (int j = 0; j < strings; j++)
+                {
+                    Console.Write($"{currentNum} * {currentNum} \t");
+                    currentNum++;
+                }
+                currentNum = 1;
+            }
         }
     }
 }

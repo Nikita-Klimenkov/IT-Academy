@@ -17,41 +17,37 @@ namespace HomeWork3
             
             do
             {
-                if (number % 20 == 0)
-                {
-                    Console.WriteLine(number);
-                }
+                Console.WriteLine(number);
 
-                number--;
+                number -= 20;
             } while (number >= -100);
         }
 
         private static void DoubleDigit()
         {
-            for (int i = 10; i < 100; i++)
+            for (int i = 10; i <= 100; i += 5)
             {
-                if (i % 5 == 0)
-                {
-                    Console.Write($"{i} ");
-                }
+                Console.Write($"{i} ");
             }
         }
 
         private static void Average()
         {
-            int summ = 0;
-            int count = 0;
-            int average = 0;
+            Console.WriteLine("Введите число а: ");
+            int a = Convert.ToInt32(Console.ReadLine());
             
-            for (int i = 1; i <= 100; i++)
+            Console.WriteLine("Введите число b: ");
+            int b = Convert.ToInt32(Console.ReadLine());
+            
+            int sum = 0;
+
+            int count;
+            for (count = a; count <= b; count++)
             {
-                count++;
-                summ += i;
+                sum += count;
             }
 
-            average = summ / count;
-            
-            Console.WriteLine($"Среднее арифметическое равно: {average} \nСумма всех целых чисел равна: {summ}");
+            Console.WriteLine($"Среднее арифметическое равно: {sum / count} \nСумма всех целых чисел равна: {sum}");
         }
     }
 }

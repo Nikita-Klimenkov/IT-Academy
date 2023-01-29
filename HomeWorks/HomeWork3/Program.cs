@@ -6,8 +6,8 @@ namespace HomeWork3
     {
         static void Main(string[] args)
         {
-            SequenceOfNumbers();
-            DoubleDigit();
+            //SequenceOfNumbers();
+            //DoubleDigit();
             Average();
         }
 
@@ -39,14 +39,15 @@ namespace HomeWork3
             Console.WriteLine("Введите число b: ");
             int b = Convert.ToInt32(Console.ReadLine());
             
-            int sum = 0;
-
-            int count;
-            for (count = a; count <= b; count++)
+            float sum = 0;
+            int count = 0;
+            
+            for (int i = a; i <= b; i++)
             {
-                sum += count;
+                sum += i;
+                count++;
             }
-
+        
             Console.WriteLine($"Среднее арифметическое равно: {sum / count} \nСумма всех целых чисел равна: {sum}");
         }
     }

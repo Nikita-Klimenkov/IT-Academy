@@ -6,8 +6,22 @@ namespace HomeWork3
     {
         static void Main(string[] args)
         {
-            //SequenceOfNumbers();
-            //DoubleDigit();
+            Console.WriteLine("Задание номер 1:");
+            
+            SequenceOfNumbers();
+            
+            Console.WriteLine("Нажмите на любую клавишу");
+            Console.ReadLine();
+            Console.Clear();
+            
+            Console.WriteLine("Задание номер 2:");
+
+            DoubleDigit();
+            
+            Console.WriteLine("Нажмите на любую клавишу");
+            Console.ReadLine();
+            Console.Clear();
+            
             Average();
         }
 

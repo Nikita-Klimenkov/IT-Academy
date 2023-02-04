@@ -8,6 +8,13 @@ namespace HomeWork4_2
         private float salary;
         private string name;
         private int level;
+        private int workExperience;
+
+        public int WorkExperience
+        {
+            get => workExperience;
+            set => workExperience = value;
+        }
 
         public int Level
         {
@@ -54,12 +61,13 @@ namespace HomeWork4_2
             }
         }
         
-        public Worker(string name, string position, float salary, int level)
+        public Worker(string name, string position, float salary, int level, int workExperience)
         {
             this.name = name;
             this.position = position;
             this.salary = salary;
             this.level = level;
+            this.workExperience = workExperience;
         }
     }
 }

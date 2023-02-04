@@ -42,7 +42,7 @@ namespace HomeWork3
 
         private static void DoubleDigit()
         {
-            for (int i = 0; i <= 100; i ++)
+            for (int i = 10; i <= 100; i += 5)
             {
                 if (i % 5 == 0)
                 {
@@ -63,21 +63,10 @@ namespace HomeWork3
             
             while (cycle)
             {
-                Console.WriteLine("Введите число а: ");
+                a = Parse("Введите число a: ");
 
-                if (!int.TryParse(Console.ReadLine(), out a) && a > 0)
-                {
-                    Console.WriteLine("Неправильный ввод, попробуйте ещё");
-                    continue;
-                }
-            
-                Console.WriteLine("Введите число b: ");
-
-                if (!int.TryParse(Console.ReadLine(), out b))
-                {
-                    Console.WriteLine("Неправильный ввод, попробуйте ещё");
-                    continue;
-                }
+                b = Parse("Введите число b: ");
+                
                 cycle = false;
             }
             
@@ -88,6 +77,29 @@ namespace HomeWork3
             }
             
             Console.WriteLine($"Среднее арифметическое равно: {sum / count} \nСумма всех целых чисел равна: {sum}");
+        }
+
+        private static int Parse(string message)
+        {
+            string sentence;
+            int result;
+            
+            while (true)
+            {
+                Console.Write(message);
+
+                sentence = Console.ReadLine();
+
+                if (int.TryParse(sentence, out result) && result > 0)
+                {
+                    return result;
+                }
+                else
+                {
+                    Console.WriteLine("Неправильный ввод, попробуйте ещё");
+                    continue;
+                }
+            }
         }
     }
 }

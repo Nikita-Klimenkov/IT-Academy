@@ -17,7 +17,7 @@ namespace HomeWork4_2
 
         public void ShowWorkerInfo(int index)
         {
-            Console.WriteLine($"Имя: {workers[index - 1].Name}, Должность: {workers[index - 1].Position}, Зарплата: {workers[index - 1].Salary}, Разряд: {workers[index - 1].Level}");
+            Console.WriteLine($"Имя: {workers[index].Name}, Должность: {workers[index].Position}, Зарплата: {workers[index].Salary}, Разряд: {workers[index].Level}");
         }
         
         public void HireWorker(Worker worker)

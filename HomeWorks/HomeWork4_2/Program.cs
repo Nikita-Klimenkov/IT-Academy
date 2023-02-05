@@ -20,10 +20,8 @@ namespace HomeWork4_2
                 enterprise.ShowWorkers();
 
                 Console.WriteLine("Выберите работника которого надо изменить:\nЕсли хотите закончить программу нажмите Любую букву!");
-                
-                int indexOfWorker;
-                
-                cycle = int.TryParse(Console.ReadLine(), out indexOfWorker);
+
+                cycle = int.TryParse(Console.ReadLine(), out var indexOfWorker);
                 indexOfWorker--;
                 
                 if (!cycle)
@@ -35,7 +33,7 @@ namespace HomeWork4_2
                 enterprise.ShowWorkerInfo(indexOfWorker);
                 Console.WriteLine("Что вы хотите в нём изменить:\n1 - Состояние работы\n2 - Должность\n3 - Зарплату\n4 - Разряд\n5 - Стаж работы\n6 - Уволить сотрудника");
 
-                int indexOfCharacter = Convert.ToInt32(Console.ReadLine());
+                var parsing = int.TryParse(Console.ReadLine(), out var indexOfCharacter);
                 Console.Clear();
                 
                 switch (indexOfCharacter)

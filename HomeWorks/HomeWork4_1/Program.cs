@@ -11,33 +11,33 @@ namespace HomeWork4
             Point point2 = new Point(16, 8);
 
             Console.WriteLine($"Расстояние между двумя точками равно: {Point.LengthPoints(point1,point2)} ");
-            Console.WriteLine($"Количество созданных экземпляров равно: {Point.count}");
+            Console.WriteLine($"Количество созданных экземпляров равно: {Point.Count}");
             
         }
     }
 
     class Point
     {
-        private int x;
-        private int y;
+        private int _x;
+        private int _y;
 
-        public static int count;
+        public static int Count;
 
         static Point()
         {
-            count = 0;
+            Count = 0;
         }
         public Point(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            this._x = x;
+            this._y = y;
             
-            count++;
+            Count++;
         }
 
         public static double LengthPoints(Point firstPoint, Point secondPoint)
         {
-            return Math.Sqrt(Math.Pow(secondPoint.x - firstPoint.x, 2) + Math.Pow(secondPoint.y - firstPoint.y, 2));
+            return Math.Sqrt(Math.Pow(secondPoint._x - firstPoint._x, 2) + Math.Pow(secondPoint._y - firstPoint._y, 2));
         }
     }
 }

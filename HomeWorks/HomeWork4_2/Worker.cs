@@ -4,13 +4,18 @@ namespace HomeWork4_2
 {
     public class Worker
     {
-        private float salary;
-        private int level;
+        private float _salary;
+        private int _level;
 
         public int WorkExperience { get; set; }
+        
+        public string Name { get; set; }
+        
+        public string Position { get; set; }
+        
         public int Level
         {
-            get => level;
+            get => _level;
             set
             {
                 if (value > 5 || value <= 0)
@@ -21,35 +26,33 @@ namespace HomeWork4_2
                 }
                 else
                 {
-                    salary = value;
+                    _salary = value;
                 }
             }
         }
-        public string Name { get; set; }
-        public string Position { get; set; }
 
         public float Salary
         {
-            get => salary;
+            get => _salary;
             set
             {
                 if (value > 2000 || value <= 500)
                 {
                     Console.WriteLine("Неправильная сумма");
                     Console.WriteLine("Нажмите на любую клавишу");
-                    Console.ReadLine();
+                    Console.ReadKey();
                 }
                 else
                 {
-                    salary = value;
+                    _salary = value;
                 }
             }
         }
         
         public Worker(string name, string position, float salary, int level, int workExperience)
         {
-            this.salary = salary;
-            this.level = level;
+            this._salary = salary;
+            this._level = level;
             Position = position;
             Name = name;
             WorkExperience = workExperience;

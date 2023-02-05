@@ -5,53 +5,53 @@ namespace HomeWork4_2
 {
     public class Enterprise
     {
-        private List<Worker> workers = new List<Worker>();
+        private readonly List<Worker> _workers = new List<Worker>();
 
         public void ShowWorkers()
         {
-            for (int i = 0; i < workers.Count; i++)
+            for (int i = 0; i < _workers.Count; i++)
             {
-                Console.WriteLine($"{i + 1}) Имя: {workers[i].Name}, Должность: {workers[i].Position}, Зарплата: {workers[i].Salary}, Разряд: {workers[i].Level}, Стаж работы: {workers[i].WorkExperience} лет");
+                Console.WriteLine($"{i + 1}) Имя: {_workers[i].Name}, Должность: {_workers[i].Position}, Зарплата: {_workers[i].Salary}, Разряд: {_workers[i].Level}, Стаж работы: {_workers[i].WorkExperience} лет");
             }
         }
 
         public void ShowWorkerInfo(int index)
         {
-            Console.WriteLine($"Имя: {workers[index].Name}, Должность: {workers[index].Position}, Зарплата: {workers[index].Salary}, Разряд: {workers[index].Level}");
+            Console.WriteLine($"Имя: {_workers[index].Name}, Должность: {_workers[index].Position}, Зарплата: {_workers[index].Salary}, Разряд: {_workers[index].Level}");
         }
         
         public void HireWorker(Worker worker)
         {
-            workers.Add(worker);
+            _workers.Add(worker);
         }
         
         public void FireWorker(int index)
         {
-            workers.Remove(workers[index]);
+            _workers.Remove(_workers[index]);
         }
         public void Name(int index, string name)
         {
-            workers[index].Name = name;
+            _workers[index].Name = name;
         }
 
         public void WorkExperience(int index, int years)
         {
-            workers[index].WorkExperience = years;
+            _workers[index].WorkExperience = years;
         }
         
         public void Salary(int index, int salary)
         {
-            workers[index].Salary = salary;
+            _workers[index].Salary = salary;
         }
 
         public void Position(int index, string position)
         {
-            workers[index].Position = position;
+            _workers[index].Position = position;
         }
         
         public void Level(int index, int level)
         {
-            workers[index].Level = level;
+            _workers[index].Level = level;
         }
     }
 }

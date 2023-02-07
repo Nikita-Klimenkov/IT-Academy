@@ -65,6 +65,8 @@ namespace HomeWork3
             {
                 a = Parse("Введите число a: ");
 
+                Console.Clear();
+                
                 b = Parse("Введите число b: ");
                 
                 cycle = false;
@@ -76,6 +78,7 @@ namespace HomeWork3
                 count++;
             }
             
+            Console.Clear();
             Console.WriteLine($"Среднее арифметическое равно: {sum / count} \nСумма всех целых чисел равна: {sum}");
         }
 

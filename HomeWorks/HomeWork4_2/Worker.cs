@@ -51,8 +51,8 @@ namespace HomeWork4_2
         
         public Worker(string name, string position, float salary, int level, int workExperience)
         {
-            this._salary = salary;
-            this._level = level;
+            _salary = salary;
+            _level = level;
             Position = position;
             Name = name;
             WorkExperience = workExperience;

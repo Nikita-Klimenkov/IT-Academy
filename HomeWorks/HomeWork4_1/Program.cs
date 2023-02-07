@@ -18,8 +18,8 @@ namespace HomeWork4
 
     class Point
     {
-        private int _x;
-        private int _y;
+        private readonly int _x;
+        private readonly int _y;
 
         public static int Count;
 
@@ -29,8 +29,8 @@ namespace HomeWork4
         }
         public Point(int x, int y)
         {
-            this._x = x;
-            this._y = y;
+            _x = x;
+            _y = y;
             
             Count++;
         }

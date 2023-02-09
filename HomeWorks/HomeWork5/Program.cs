@@ -7,13 +7,13 @@ namespace HomeWork5
     {
         static void Main(string[] args)
         {
-              Task1();
+              //Task1();
              
-              Task2();
+              //Task2();
              
               Task3();
              
-              Task4();
+              //Task4();
         }
 
         private static void Task1()
@@ -67,11 +67,12 @@ namespace HomeWork5
         {
             string way = @"c:\WebServers\home\testsite\www\myfile.txt";
 
-            Regex regex = new Regex(@"\w*", RegexOptions.IgnorePatternWhitespace);
-            MatchCollection matchCollection = regex.Matches(way);
+            string[] words = way.Split("\\");
             
+            Regex regex = new Regex(@"\w*");
+            MatchCollection matchCollection = regex.Matches(words[^1]);
             
-            Console.WriteLine($"Имя файла равно - ");
+            Console.WriteLine($"Имя файла равно - {matchCollection[0]}");
         }
         
         private static void Task4()

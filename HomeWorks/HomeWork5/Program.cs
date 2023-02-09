@@ -7,43 +7,35 @@ namespace HomeWork5
     {
         static void Main(string[] args)
         {
-            // Task1();
-            //
-            // Task2();
-            //
-             Task3();
-            //
-            // Task4();
+              Task1();
+             
+              Task2();
+             
+              Task3();
+             
+              Task4();
         }
 
-        private static void Task4()
+        private static void Task1()
         {
-            Console.WriteLine("Задание номер 4");
+            Console.WriteLine("Задание номер 1");
             
-            string text = "Забавная история о мальчике, который не хотел есть манную кашу.\n" +
-                          "Мама пообещала сводить его в Кремль, если он съест всю кашу.\n" +
-                          "Дениска добавляет в кашу сахар, соль, воду и даже хрен, чтобы сделать ее более вкусной.\n" +
-                          "Но ничего не помогает, и он решает выбросить кашу в окно.\n" +
-                          "Мама довольна, что сын все съел.\n" +
-                          "Однако через некоторое время к ним приходит милиционер с гражданином, облитым кашей из окна.";
-
-            Console.WriteLine($"Текст для выполнения задания: \n{text}");
+            int[] firstArray = { 5, 7, 1, 4, 9, 5, 4, 3, 8, 7 };
             
-            text = new string(text.Replace(',', ' '));
-            text = new string(text.Replace('.', ' '));
-
-            string[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            Console.WriteLine("Неотсортированный массив: ");
+            PrepareArray(firstArray);
             
-            Console.WriteLine($"Количество слов в тексте равно - {words.Length} слов");
-        }
-
-        private static void Task3()
-        {
-            string way = @"c:\WebServers\home\testsite\www\myfile.txt";
-
-            Regex regex = new Regex(@"\w*");
+            Console.ReadKey();
             
-            Console.WriteLine(regex);
+            Console.WriteLine("\nОтсортированный массив:");
+            Array.Sort(firstArray);
+            Array.Reverse(firstArray);
+            
+            PrepareArray(firstArray);
+            
+            Console.WriteLine("\nНажмите на любую клавишу для следующего задания:");
+            Console.ReadKey();
+            Console.Clear();
         }
         
         private static void Task2()
@@ -71,27 +63,38 @@ namespace HomeWork5
             Console.Clear();
         }
         
-        private static void Task1()
+        private static void Task3()
         {
-            Console.WriteLine("Задание номер 1");
+            string way = @"c:\WebServers\home\testsite\www\myfile.txt";
+
+            Regex regex = new Regex(@"\w*", RegexOptions.IgnorePatternWhitespace);
+            MatchCollection matchCollection = regex.Matches(way);
             
-            int[] firstArray = { 5, 7, 1, 4, 9, 5, 4, 3, 8, 7 };
             
-            Console.WriteLine("Неотсортированный массив: ");
-            PrepareArray(firstArray);
-            
-            Console.ReadKey();
-            
-            Console.WriteLine("\nОтсортированный массив:");
-            Array.Sort(firstArray);
-            Array.Reverse(firstArray);
-            PrepareArray(firstArray);
-            
-            Console.WriteLine("\nНажмите на любую клавишу для следующего задания:");
-            Console.ReadKey();
-            Console.Clear();
+            Console.WriteLine($"Имя файла равно - ");
         }
         
+        private static void Task4()
+        {
+            Console.WriteLine("Задание номер 4");
+            
+            string text = "Забавная история о мальчике, который не хотел есть манную кашу.\n" +
+                          "Мама пообещала сводить его в Кремль, если он съест всю кашу.\n" +
+                          "Дениска добавляет в кашу сахар, соль, воду и даже хрен, чтобы сделать ее более вкусной.\n" +
+                          "Но ничего не помогает, и он решает выбросить кашу в окно.\n" +
+                          "Мама довольна, что сын все съел.\n" +
+                          "Однако через некоторое время к ним приходит милиционер с гражданином, облитым кашей из окна.";
+
+            Console.WriteLine($"Текст для выполнения задания: \n{text}");
+            
+            text = new string(text.Replace(',', ' '));
+            text = new string(text.Replace('.', ' '));
+
+            string[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            
+            Console.WriteLine($"Количество слов в тексте равно - {words.Length} слов");
+        }
+
         private static void PrepareArray(int[] array)
         {
             foreach (var number in array)

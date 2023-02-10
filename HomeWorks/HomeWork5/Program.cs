@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace HomeWork5
@@ -7,20 +9,20 @@ namespace HomeWork5
     {
         static void Main(string[] args)
         {
-              //Task1();
+              Task1();
              
-              //Task2();
+              Task2();
              
               Task3();
              
-              //Task4();
+              Task4();
         }
 
         private static void Task1()
         {
             Console.WriteLine("Задание номер 1");
             
-            int[] firstArray = { 5, 7, 1, 4, 9, 5, 4, 3, 8, 7 };
+            int[] firstArray = { 5, 7, 1, 4, 12, 9, 5, 4, 3, 8, 7 };
             
             Console.WriteLine("Неотсортированный массив: ");
             PrepareArray(firstArray);
@@ -28,10 +30,39 @@ namespace HomeWork5
             Console.ReadKey();
             
             Console.WriteLine("\nОтсортированный массив:");
+            
             Array.Sort(firstArray);
             Array.Reverse(firstArray);
             
+            Console.WriteLine("Первый способ");
+
             PrepareArray(firstArray);
+
+            Console.ReadKey();
+            
+            Console.WriteLine("\nВторой способ");
+
+            for (int i = firstArray.Length - 1; i >= 0; i--)
+            {
+                Console.Write($"{firstArray[i]} ");
+            }
+            
+            Console.WriteLine("\nПоследние 3 элемента");
+
+            for (int i = firstArray.Length - 1; i >= firstArray.Length - 3; i--)
+            {
+                Console.Write($"{firstArray[i]} ");
+            }
+
+            Console.WriteLine("\nЧетные элементы, которые больше 5");
+            
+            foreach (var number in firstArray)
+            {
+                if (number % 2 == 0 && number > 5)
+                {
+                    Console.Write($"{number} ");
+                }
+            }
             
             Console.WriteLine("\nНажмите на любую клавишу для следующего задания:");
             Console.ReadKey();

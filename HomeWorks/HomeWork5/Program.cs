@@ -22,7 +22,7 @@ namespace HomeWork5
         {
             Console.WriteLine("Задание номер 1");
             
-            int[] firstArray = { 5, 7, 1, 4, 12, 9, 5, 4, 3, 8, 7 };
+            int[] firstArray = { 5, 7, 1, 4, 12, 9};
             
             Console.WriteLine("Неотсортированный массив: ");
             PrepareArray(firstArray);
@@ -42,6 +42,8 @@ namespace HomeWork5
             
             Console.WriteLine("\nВторой способ");
 
+            Array.Reverse(firstArray);
+            
             for (int i = firstArray.Length - 1; i >= 0; i--)
             {
                 Console.Write($"{firstArray[i]} ");
@@ -49,9 +51,9 @@ namespace HomeWork5
             
             Console.WriteLine("\nПоследние 3 элемента");
 
-            for (int i = firstArray.Length - 1; i >= firstArray.Length - 3; i--)
+            for (int i = 1; i <= 3 ; i++)
             {
-                Console.Write($"{firstArray[i]} ");
+                Console.Write($"{firstArray[^i]} ");
             }
 
             Console.WriteLine("\nЧетные элементы, которые больше 5");
@@ -73,7 +75,7 @@ namespace HomeWork5
         {
             Console.WriteLine("Задание номер 2");
 
-            int[,] secondArray = { {5,2,1}, {7,8,3}, {9,5,7} };
+            int[,] secondArray = { {5,2,1}, {7,8,3}, {7,5,10} };
             
             int maxValue = 0;
 
@@ -86,6 +88,7 @@ namespace HomeWork5
                         maxValue = secondArray[i, j];
                     }
                 }
+                
                 Console.WriteLine($"{i + 1} Ряд = {maxValue}");
             }
             
@@ -96,14 +99,18 @@ namespace HomeWork5
         
         private static void Task3()
         {
+            Console.WriteLine("Задание номер 3");
+            
             string way = @"c:\WebServers\home\testsite\www\myfile.txt";
-
-            string[] words = way.Split("\\");
             
-            Regex regex = new Regex(@"\w*");
-            MatchCollection matchCollection = regex.Matches(words[^1]);
+            Regex regex = new Regex(@"\w+");
+            MatchCollection matchCollection = regex.Matches(way);
             
-            Console.WriteLine($"Имя файла равно - {matchCollection[0]}");
+            Console.WriteLine($"Имя файла равно - {matchCollection[^2]}");
+            
+            Console.WriteLine("Нажмите на любую клавишу для следующего задания:");
+            Console.ReadKey();
+            Console.Clear();
         }
         
         private static void Task4()
@@ -119,12 +126,10 @@ namespace HomeWork5
 
             Console.WriteLine($"Текст для выполнения задания: \n{text}");
             
-            text = new string(text.Replace(',', ' '));
-            text = new string(text.Replace('.', ' '));
-
-            string[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            Regex regex = new Regex(@"\w+");
+            MatchCollection matchCollection = regex.Matches(text);
             
-            Console.WriteLine($"Количество слов в тексте равно - {words.Length} слов");
+            Console.WriteLine($"Количество слов в тексте равно - {matchCollection.Count} слов");
         }
 
         private static void PrepareArray(int[] array)

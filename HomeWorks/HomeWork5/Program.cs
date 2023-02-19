@@ -75,13 +75,13 @@ namespace HomeWork5
         {
             Console.WriteLine("Задание номер 2");
 
-            int[,] secondArray = { {5,2,1}, {7,8,3}, {7,5,10} };
+            int[,] secondArray = { {74,19,77}, {70,79,36}, {88,21,43} };
             
             int maxValue = 0;
 
-            for (int i = 0; i < secondArray.GetUpperBound(0) + 1; i++)
+            for (int i = 0; i < secondArray.GetLength(0); i++)
             {
-                for (int j = 0; j < secondArray.GetUpperBound(1) + 1; j++)
+                for (int j = 0; j < secondArray.GetLength(1); j++)
                 {
                     if (secondArray[i, j] > maxValue)
                     {
@@ -102,11 +102,12 @@ namespace HomeWork5
             Console.WriteLine("Задание номер 3");
             
             string way = @"c:\WebServers\home\testsite\www\myfile.txt";
+
+            way = way.Replace(".", "\\");
             
-            Regex regex = new Regex(@"\w+");
-            MatchCollection matchCollection = regex.Matches(way);
+            string[] words = way.Split("\\");
             
-            Console.WriteLine($"Имя файла равно - {matchCollection[^2]}");
+            Console.WriteLine($"Имя файла равно - {words[^2]}");
             
             Console.WriteLine("Нажмите на любую клавишу для следующего задания:");
             Console.ReadKey();
